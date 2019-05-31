@@ -33,7 +33,7 @@ multiplot(p1, p2, p3, cols = 3)
 
 # Defining the time series for the analysis
 data_fraction <- (gdp_data$Industry - gdp_data$Transportation)/gdp_data$Transportation
-data_timeseries <- ts(data_fraction, frequency = 1, start = gdp_data$Year[1])
+data_timeseries <- ts(data_fraction, frequency = 4, start = gdp_data$Year[1])
 autoplot(data_timeseries)
 
 basicStats(data_fraction)
@@ -65,8 +65,8 @@ coeftest(model_arima)
 # Performing residual analysis on the model and LjungBoxTest
 checkresiduals(model_arima)
 LjungBoxTest(residuals(model_arima), k = 2, lag.max = 20)
-sarima(data_timeseries, p = 1, d = 1, q = 1)
+sarima(data_timeseries, p = 4, d = 1, q = 1)
 
 # Using Forecast function to predict the values 
-h_fut <- 20
+h_fut <- 5
 plot(forecast(model_arima, h = h_fut, xreg = rep(1, h_fut)))
