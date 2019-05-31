@@ -57,7 +57,7 @@ lines(confint(break_point, breaks = 1))
 fitted(break_point)[1]
 fitted(break_point)[length(data_timeseries)]
 
-# Applying the arima statisitical model and findind its summary and co efficients
+# Applying the arima statisitical model and finding its summary and co efficients
 (model_arima <- auto.arima(data_timeseries, stepwise = FALSE, trace = TRUE))
 summary(model_arima)
 coeftest(model_arima)
