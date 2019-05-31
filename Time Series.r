@@ -1,3 +1,15 @@
+# Importing all the required libraries
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(forecast))
+suppressPackageStartupMessages(library(astsa))
+suppressPackageStartupMessages(library(lmtest))
+suppressPackageStartupMessages(library(fUnitRoots))
+suppressPackageStartupMessages(library(FitARMA))
+suppressPackageStartupMessages(library(strucchange))
+suppressPackageStartupMessages(library(reshape))
+suppressPackageStartupMessages(library(Rmisc))
+suppressPackageStartupMessages(library(fBasics))
+
 # retrieving the contents of csv file in dataframe
 gdp_data <- read.csv("gdp_data.csv")
 
